@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Backpropagation Visualizer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="header">
+  <h1>Backpropagation Visualizer</h1>
+  <p>Understand Gradient Descent Visually</p>
+</div>
+
+<div class="layout">
+
+  <div class="control-panel glass">
+
+    <div class="input-group">
+      <label>x1</label>
+      <input id="x1" type="number" value="1">
+    </div>
+
+    <div class="input-group">
+      <label>x2</label>
+      <input id="x2" type="number" value="0">
+    </div>
+
+    <div class="input-group">
+      <label>Target</label>
+      <input id="target" type="number" value="1">
+    </div>
+
+    <div class="input-group">
+      <label>Learning Rate</label>
+      <input id="lr" type="number" value="0.5" step="0.1">
+    </div>
+
+    <div class="input-group">
+      <label>Activation</label>
+      <select id="activation">
+        <option value="sigmoid">Sigmoid</option>
+        <option value="relu">ReLU</option>
+      </select>
+    </div>
+
+    <div class="buttons">
+      <button id="forwardBtn">Forward</button>
+      <button id="trainBtn">Train Step</button>
+      <button id="autoBtn">Auto Train</button>
+      <button id="resetBtn" class="danger">Reset</button>
+    </div>
+
+    <div class="info-box">
+      <h3>Loss</h3>
+      <div id="loss">-</div>
+    </div>
+
+    <div class="info-box">
+      <h3>Gradients</h3>
+      <div id="gradients">-</div>
+    </div>
+
+    <canvas id="graph" width="260" height="150"></canvas>
+
+  </div>
+
+  <div class="network-panel">
+    <svg width="820" height="450">
+
+      <!-- Lines -->
+      <line x1="120" y1="150" x2="350" y2="150" class="forward"/>
+      <line x1="120" y1="350" x2="350" y2="150" class="forward"/>
+      <line x1="120" y1="150" x2="350" y2="350" class="forward"/>
+      <line x1="120" y1="350" x2="350" y2="350" class="forward"/>
+      <line x1="380" y1="150" x2="650" y2="250" class="forward"/>
+      <line x1="380" y1="350" x2="650" y2="250" class="forward"/>
+
+      <line id="b1" x1="650" y1="250" x2="380" y2="150" class="backward"/>
+      <line id="b2" x1="650" y1="250" x2="380" y2="350" class="backward"/>
+
+      <!-- Nodes -->
+      <circle cx="100" cy="150" r="28" class="node"/>
+      <circle cx="100" cy="350" r="28" class="node"/>
+
+      <circle id="h1" cx="350" cy="150" r="28" class="node"/>
+      <circle id="h2" cx="350" cy="350" r="28" class="node"/>
+
+      <circle id="outNode" cx="650" cy="250" r="32" class="node output"/>
+
+      <!-- Weight Labels -->
+      <text id="w1" x="230" y="130" class="weight-label"></text>
+      <text id="w2" x="140" y="210" class="weight-label"></text>
+      <text id="w3" x="140" y="300" class="weight-label"></text>
+      <text id="w4" x="230" y="370" class="weight-label"></text>
+      <text id="w5" x="520" y="180" class="weight-label"></text>
+      <text id="w6" x="520" y="320" class="weight-label"></text>
+
+    </svg>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
