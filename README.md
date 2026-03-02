@@ -7,6 +7,17 @@ This repository contains hands-on Jupyter Notebook implementations of the **Back
 
 ---
 
+## 🎨 Backpropagation Visualizer
+
+To better understand how gradients flow and how weights update,
+a visual representation has been added inside the `Visualizer/` folder.
+
+<p align="center">
+  <img src="Visualizer/backpropagation.png" alt="Backpropagation Visualizer" width="600">
+</p>
+
+---
+
 ## 🧠 What is Backpropagation?
 
 Backpropagation is the algorithm used to train feedforward neural networks.
