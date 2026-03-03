@@ -40,3 +40,4 @@ This repository demonstrates the complete process clearly and mathematically.
 - Gradient Descent Optimization
 - Difference between Regression & Classification training
 - How neural networks actually learn internally
+
